@@ -21,3 +21,7 @@ windows10+python3で確認
 * bgmデータを抜くときにエラーを吐いたので例外を握りつぶすように
 * renameされなかったので自動でrenameするようにバッチを作った(クリックすると指定フォルダをrename)
 * voiceデータを抜くときにサブフォルダまでsha1で暗号化されてファイル名がバグるのでそれの修正
+
+## キャラ名の分類
+ここを見てchara_idで大体分類できる. 例えばキャルは1060で検索すれば良い
+https://github.com/esterTion/redive_master_db_diff/blob/master/character_love_rankup_text.sql
