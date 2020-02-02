@@ -1,11 +1,12 @@
 import os, shutil, hashlib, sqlite3, subprocess, struct
 
 
-USER_NAME = 'turut'
+USER_NAME = 'levena'
 DATA_DIR = 'c:/Users/{0}/AppData/LocalLow/Cygames/PrincessConnectReDive'.format(USER_NAME)
 CURRENT_DIR = os.path.dirname(os.path.realpath(__file__))
 MANIFEST_FILENAME = 'manifest.db'
-ASSET_DIR = 'b'
+ASSET_DIR = 'v'
+# ASSET_DIR = 'b'
 OUT_DIR = 'out'
 TEMP_DIR = 'temp'
 
@@ -52,9 +53,9 @@ def make_keyfile(awb_path = ''):
 def fetch_db_files(db_path):
     db = sqlite3.connect(db_path)
     cursor = db.cursor()
-    subpath = ASSET_DIR + '/'
+    subpath = ASSET_DIR + '/vo'
     cursor.execute('SELECT k FROM t WHERE k LIKE "{0}%"'.format(subpath))
-    files = [r[0][len(subpath):] for r in cursor.fetchall()]
+    files = [r[0][len('//'):] for r in cursor.fetchall()]
     db.close()
     
     return files
