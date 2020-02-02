@@ -140,9 +140,12 @@ if __name__ == "__main__":
 
     for awb_index, awb in enumerate(awb_files, start=1):
         print('-- Processing {0} ({1} of {2})...\n'.format(awb, awb_index, len(awb_files)))
+        try:
         process_awb(awb)
+        except:
+            pass
 
-    if SHOULD_CLEAN:
-        shutil.rmtree(TEMP_DIR, ignore_errors=True)
+    # if SHOULD_CLEAN:
+    #     shutil.rmtree(TEMP_DIR, ignore_errors=True)
 
     print('Done.')
